@@ -1,0 +1,135 @@
+<application>
+  <component name="VimSettings">
+    <state version="4" enabled="false" />
+    <globalmarks />
+    <filemarks>
+      <file name="/Dummy.txt" timestamp="1543313518732">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/File Header.txt.ft" timestamp="1543308941846">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/information_schema.INNODB_BUFFER_PAGE_LRU [@localhost [2]]" timestamp="1543313474101">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="E:/IdeaProjects/HelloWorld/src/com/a/java/HelloWorld.java" timestamp="1543543618621">
+        <mark key="[" line="13" column="0" />
+        <mark key="]" line="13" column="0" />
+        <mark key="^" line="21" column="4" />
+        <mark key="." line="13" column="0" />
+      </file>
+      <file name="C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/CharSequence.java" timestamp="1543544213396" />
+      <file name="E:/IdeaProjects/HelloWorld/WebHelloWorld/web/WEB-INF/web.xml" timestamp="1543312800467">
+        <mark key="[" line="3" column="64" />
+      </file>
+      <file name="/information_schema.INNODB_CMP_PER_INDEX [@localhost [2]]" timestamp="1543313478425">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="E:/IdeaProjects/HelloWorld/WebHelloWorld/web/index.jsp" timestamp="1543312870259">
+        <mark key="[" line="5" column="31" />
+      </file>
+      <file name="C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/String.java" timestamp="1543544224702" />
+      <file name="E:/IdeaProjects/HelloWorld/src/com/a/java/sql.sql" timestamp="1543543633053">
+        <mark key="[" line="0" column="8" />
+      </file>
+      <file name="E:/IdeaProjects/HelloWorld/src/com/a/java/HelloWorld1.java" timestamp="1543543450749">
+        <mark key="a" line="86" column="4" />
+        <mark key="[" line="48" column="0" />
+        <mark key="]" line="45" column="10" />
+        <mark key="." line="45" column="3" />
+      </file>
+      <file name="/information_schema.INNODB_BUFFER_POOL_STATS [@localhost [2]]" timestamp="1543313473352">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/information_schema.INNODB_CMP_PER_INDEX_RESET [@localhost [2]]" timestamp="1543313476560">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="E:/IdeaProjects/HelloWorld/Moduleo1/src/com/a/a/java/Customer.java" timestamp="1543307635271">
+        <mark key="[" line="2" column="22" />
+      </file>
+      <file name="E:/IdeaProjects/HelloWorld/src/com/a/java/TestApp.java" timestamp="1543546361710">
+        <mark key="[" line="24" column="41" />
+        <mark key="]" line="35" column="17" />
+        <mark key="^" line="35" column="17" />
+        <mark key="." line="35" column="17" />
+      </file>
+      <file name="/information_schema.INNODB_CMPMEM [@localhost [2]]" timestamp="1543313477136">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/information_schema.INNODB_CMP [@localhost [2]]" timestamp="1543313475559">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/HTML File.txt.ft" timestamp="1543544624435">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/fragment.java" timestamp="1543546735290">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/dummy.sql" timestamp="1543313485952">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="E:/IdeaProjects/shiro01/pom.xml" timestamp="1543547142464">
+        <mark key="[" line="9" column="0" />
+        <mark key="]" line="9" column="0" />
+        <mark key="." line="9" column="0" />
+      </file>
+      <file name="/ActionScript File Header.txt.ft" timestamp="1543544624521">
+        <mark key="[" line="0" column="0" />
+      </file>
+    </filemarks>
+    <jumps />
+    <registers>
+      <register name="&quot;" type="4">
+        <text />
+      </register>
+      <register name="-" type="4">
+        <text />
+      </register>
+    </registers>
+    <search>
+      <last-dir>0</last-dir>
+      <show-last>false</show-last>
+    </search>
+    <history>
+      <history-search />
+      <history-cmd />
+      <history-expr />
+      <history-input />
+    </history>
+    <shortcut-conflicts>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed C</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed V</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed S</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed D</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed A</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed O</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed I</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed Q</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed X</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed H</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed Y</text>
+      </shortcut-conflict>
+    </shortcut-conflicts>
+  </component>
+</application>

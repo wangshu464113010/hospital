@@ -1,0 +1,9 @@
+<application>
+  <component name="FileTypeManager" version="17">
+    <extensionMap>
+      <mapping ext="klib" type="ARCHIVE" />
+      <mapping ext="eml" type="PLAIN_TEXT" />
+      <mapping ext="ini" type="PLAIN_TEXT" />
+    </extensionMap>
+  </component>
+</application>
