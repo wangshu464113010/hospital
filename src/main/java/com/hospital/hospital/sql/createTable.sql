@@ -91,10 +91,12 @@ create table disease(
                       parent_id int comment '所属的父id,无父id使用0'
 )engine = innodb charset =utf8 comment '-- 科室类别表';
 
+
+drop table if exists medical_record;
 create table `medical_record`(
                                id varchar(40) primary key comment '主键',
                                allergy varchar(50) comment '过敏史',
-                               Diagnostic_type varchar(200) comment '诊断类型',
+                               Diagnostic_type varchar(200) comment '诊断类型--出诊/复诊',
                                temperature int comment '体温',
                                symptom varchar(200) comment '症状',
                                blood_pressure varchar(20) comment '血压,一段范围',
@@ -117,9 +119,12 @@ create table `medical_record`(
                                Department_id varchar(40) comment '科室主键',
                                Department_name varchar(20) comment '科室名',
 
+                               patient_id varchar(40) comment '病人主键',
+
                                CONSTRAINT `FK_mr_employee_Id` FOREIGN KEY (`employee_Id`) REFERENCES `employee` (`id`),
                                CONSTRAINT `FK_mr_disease_id` FOREIGN KEY (`disease_id`) REFERENCES `disease` (`id`),
-                               CONSTRAINT `FK_mr_Department_id` FOREIGN KEY (`department_id`) REFERENCES `department` (`id`)
+                               CONSTRAINT `FK_mr_Department_id` FOREIGN KEY (`department_id`) REFERENCES `department` (`id`),
+                               CONSTRAINT `FK_mr_patient_id` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`p_id`)
 )engine = innodb charset =utf8 comment '病历表';
 
 drop table if exists prescription;
@@ -199,11 +204,139 @@ create table data_dictionary(
 )engine = innodb charset =utf8 comment '数据字典';
 
 
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('100','支付方式','-1',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('100100','现金支付','100',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('100101','微信支付','100',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('100102','支付宝支付','100',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('100103','银行卡支付','100',sysdate(),sysdate(),1);
+
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('200','用法','-1',sysdate(),sysdate(),1);
+
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('200100','口服','200',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('200101','肌肉注射','200',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('200102','静脉注射','200',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('200103','冲服','200',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('200104','雾化皮试','200',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('200105','外敷','200',sysdate(),sysdate(),1);
 
 
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('300','计量单位','-1',sysdate(),sysdate(),1);
+
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('300100','包','300',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('300101','盒','300',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('300102','袋','300',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('300103','丸','300',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('300104','支','300',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('300105','枚','300',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('300106','粒','300',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('300107','板','300',sysdate(),sysdate(),1);
+
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('400','发票类型','-1',sysdate(),sysdate(),1);
+
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('400100','中药费','400',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('400101','西药费','400',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('400102','附加费','400',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('400103','检查费','400',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('400104','材料费','400',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('400105','诊疗费','400',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('400106','体检费','400',sysdate(),sysdate(),1);
+
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('500','药品分类','-1',sysdate(),sysdate(),1);
+
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('500100','西药','500',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('500101','中药','500',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('500102','心脑血管通用药','500',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('500103','消炎药','500',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('500104','安眠药','500',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('500105','麻醉药','500',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('500106','退烧药','500',sysdate(),sysdate(),1);
 
 
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('600','药品剂型','-1',sysdate(),sysdate(),1);
 
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('600100','片剂','600',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('600101','注射剂','600',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('600102','糖浆剂','600',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('600103','油剂','600',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('600104','粉剂','600',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('600105','软膏','600',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('600106','口服剂','600',sysdate(),sysdate(),1);
+insert into  data_dictionary(id,name,parent_id,create_date,update_date,state)
+values ('600107','散剂','600',sysdate(),sysdate(),1);
 
+-- --------------------------------------------------------------------
+insert into disease(id,serial_num,name,parent_id)
+values (100,'001','呼吸内科',0);
+insert into disease(id,serial_num,name,parent_id)
+values (200,'002','呼吸内科',0);
+insert into disease(id,serial_num,name,parent_id)
+values (300,'003','神经内科',0);
+insert into disease(id,serial_num,name,parent_id)
+values (400,'004','肾内科',0);
 
+insert into disease(id,serial_num,name,parent_id)
+values (500,'005','心血管内科',100);
+insert into disease(id,serial_num,name,parent_id)
+values (600,'006','妇科',100);
+insert into disease(id,serial_num,name,parent_id)
+values (700,'007','儿科',100);
+insert into disease(id,serial_num,name,parent_id)
+values (800,'008','眼科',100);
+
+insert into disease(id,serial_num,name,parent_id)
+values (100100,'001001','感冒',100);
+insert into disease(id,serial_num,name,parent_id)
+values (100101,'001002','慢性支气管炎',100);
+insert into disease(id,serial_num,name,parent_id)
+values (100102,'001003','百日咳',100);
+insert into disease(id,serial_num,name,parent_id)
+values (200100,'002001','食物中毒',200);
+
+insert into disease(id,serial_num,name,parent_id)
+values (200101,'002004','慢性胃炎',200);
 
