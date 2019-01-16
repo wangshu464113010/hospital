@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hospital.hospital.mapper.PatientMapper">
+    <resultMap id="patientRM" type="patient">
+        <id column="p_id" property="id" />
+        <result column="p_name" property="name" />
+        <result column="p_sex" property="sex" />
+        <result column="p_age" property="age" />
+        <result column="p_birthday" property="birthday" />
+        <result column="p_weight" property="weight" />
+        <result column="p_height" property="height" />
+        <result column="P_illness_Date" property="illnessDate" />
+        <result column="p_tel" property="tel" />
+        <result column="p_address" property="address" />
+        <result column="p_Identity_Num" property="identityNum" />
+        <result column="p_rel_person" property="relPerson" />
+        <result column="p_rel_person_tel" property="relPersonTel" />
+    </resultMap>
+    <select id="selectAll" resultMap="patientRM" >
+        select * from patient
+    </select>
+
+    <insert id="insert" parameterType="patient">
+      insert into patient(p_id,p_name,p_sex,p_age,p_birthday,p_weight,p_height,P_illness_Date,
+                          p_tel,p_address,p_Identity_Num,p_rel_person,p_rel_person_tel)
+      values (#{id},#{name},#{sex},#{age},#{birthday},#{weight}
+              ,#{height},#{illnessDate},#{tel}
+              ,#{address},#{identityNum},#{relPerson},#{relPersonTel})
+
+    </insert>
+
+
+
+
+
+</mapper>
