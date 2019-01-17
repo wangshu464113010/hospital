@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HelloController {
 
-    @RequestMapping("{page}")//跳转页面
+    @RequestMapping("/{page}")//跳转页面
     public String toPage(@PathVariable String page){
         return page;
     }
