@@ -2,6 +2,7 @@ package com.hospital.hospital;
 
 import com.hospital.hospital.domain.Employee;
 import com.hospital.hospital.mapper.EmployeeMapper;
+import com.hospital.hospital.service.RegistrationService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,13 @@ import java.util.UUID;
 public class TestEmployee {
     @Autowired
     private EmployeeMapper employeeMapper;
+
+    @Autowired
+    private RegistrationService registrationService;
+    @Test
+    public void Testinsert1(){
+        registrationService.findAll();
+    }
 
     @Test
     public void Testinsert(){

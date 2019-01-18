@@ -11,8 +11,8 @@
     <result column="serial_num" property="serialNum" jdbcType="INTEGER" />
     <result column="Department_id" property="departmentId" jdbcType="VARCHAR" />
     <result column="Department_name" property="departmentName" jdbcType="VARCHAR" />
-    <result column="employeeId" property="employeeid" jdbcType="VARCHAR" />
-    <result column="employeeName" property="employeename" jdbcType="VARCHAR" />
+    <result column="employeeid" property="employeeId" jdbcType="VARCHAR" />
+    <result column="employeeName" property="employeeName" jdbcType="VARCHAR" />
     <result column="Registration_id" property="registrationId" jdbcType="VARCHAR" />
     <result column="Registration_person" property="registrationPerson" jdbcType="VARCHAR" />
     <result column="state" property="state" jdbcType="INTEGER" />
