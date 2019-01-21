@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.stereotype.Service;
 import sun.dc.pr.PRError;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -19,7 +20,7 @@ import java.util.List;
 @Service
 public class DrugDetailsServiceImpl implements DrugDetailsService {
 
-    @Autowired
+    @Resource
     private DrugDetailsMapper drugDetailsMapper;
 
 
