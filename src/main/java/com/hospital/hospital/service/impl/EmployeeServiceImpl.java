@@ -10,6 +10,7 @@ import com.hospital.hospital.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -22,7 +23,7 @@ import java.util.List;
 public class EmployeeServiceImpl implements EmployeeService {
 
 
-    @Autowired
+    @Resource
     private EmployeeMapper employeeMapper;
 
     @Override
