@@ -27,5 +27,14 @@ public class DrugDetailsContoller {
         return drugDetailsService.findAll();
     }
 
+    @RequestMapping("insertDrugDetails")
+    public String insert(DrugDetails drugDetails){
+        System.out.println(drugDetails);
+//        drugDetailsService.insertDrugDetails(drugDetails);
+        return "/product-brand";
+
+    }
+
+
 
 }

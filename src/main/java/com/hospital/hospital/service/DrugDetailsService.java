@@ -17,4 +17,6 @@ public interface DrugDetailsService {
 
     public List<DrugDetails> findAll();
 
+    public void insertDrugDetails(DrugDetails drugDetails);
+
 }

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MedicalRecordController {
     @RequestMapping("add")
     public String add(MedicalRecord medicalRecord){
-
+        System.out.println(medicalRecord);
         return null;
     }
 
