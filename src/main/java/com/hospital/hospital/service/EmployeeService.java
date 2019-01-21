@@ -19,6 +19,7 @@ public interface EmployeeService {
 
     public List<Employee> findAllByPage();
 
+    public Employee Login(String SerialNum, String password);
 
 
 }

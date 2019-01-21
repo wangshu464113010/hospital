@@ -39,11 +39,16 @@
 			<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
 				<ul class="cl">
 					<li>超级管理员</li>
-					<li class="dropDown dropDown_hover"> <a href="#" class="dropDown_A">admin <i class="Hui-iconfont">&#xe6d5;</i></a>
+					<li class="dropDown dropDown_hover">
+						<a href="#" onclick="member_add('添加用户','member-view.html','','510')" class="dropDown_A">
+							<span th:text="${name.name}"></span> <i class="Hui-iconfont">&#xe6d5;</i>
+						</a>
 						<ul class="dropDown-menu menu radius box-shadow">
-							<li><a href="#">个人信息</a></li>
-							<li><a href="#">切换账户</a></li>
-							<li><a href="#">退出</a></li>
+							<li><a href="#" onclick="member_add('添加用户','member-view.html','','510')" class="dropDown_A">
+								个人信息 <i class="Hui-iconfont">&#xe6d5;</i>
+							</a></li>
+							<li><a href="login">切换账户</a></li>
+							<li><a href="logout">退出</a></li>
 						</ul>
 					</li>
 					<li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
@@ -72,7 +77,7 @@
 					<li><a _href="article-list.html"  href="javascript:void(0)">门诊挂号</a></li>
 					<li><a _href="prescription.html"  href="javascript:void(0)">门诊处方</a></li>
 					<li><a _href="fee-dispensing.html"  href="javascript:void(0)">病历管理</a></li>
-					<li><a _href="dispensing.html"  href="javascript:void(0)">收费发药</a></li>				
+					<li><a th:_href="@{/findAllMedicineList}"  href="javascript:void(0)">收费发药</a></li>
 				</ul>
 			</dd>
 		</dl>

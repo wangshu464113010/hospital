@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @author: wangshu
  * @create: 2019-01-16
  **/
-@ControllerAdvice
+//@ControllerAdvice
 public class GlobalException {
 
     @ExceptionHandler(value = {java.lang.Exception.class})

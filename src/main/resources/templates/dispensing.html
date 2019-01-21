@@ -28,46 +28,48 @@
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 门诊管理 <span class="c-gray en">&gt;</span> 收费发药 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
+	<form action="findAllMedicineList" method="get">
 	<div class="text-c"> 日期范围：
 		<input type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}'})" id="datemin" class="input-text Wdate" style="width:120px;">
 		-
 		<input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d'})" id="datemax" class="input-text Wdate" style="width:120px;">
-		<input type="text" class="input-text" style="width:250px" placeholder="请在此输入" id="" name="">
-		<button type="submit" class="btn btn-success" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜药单</button>
+		<input type="text" class="input-text" style="width:250px" placeholder="请在此输入" name="name1">
+		<input type="submit" value="搜索" />
 	</div>
-	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a href="javascript:;" onclick="admin_add('添加拿药单','drug-add.html','300','400')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加药品单</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+	</form>
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a href="javascript:;" onclick="admin_add('添加拿药单','drug-add.html','300','450')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加药品单</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
 	<table class="table table-border table-bordered table-bg">
 		<thead>
 			<tr>
 				<th scope="col" colspan="9">员工列表</th>
 			</tr>
-			<tr class="text-c">
+			<tr class="text-c" >
 				<th width="25"><input type="checkbox" name="" value=""></th>
 				<th width="40">处方单号</th>
 				<th width="150">主治医生</th>
 				<th width="90">药品编号</th>
 				<th width="150">药品名称</th>
-				<th width="100">付费方式</th>
+				<th width="100">患者姓名</th>
 				<th width="150">总费用</th>
-				<th width="130">领取时间</th>				
+				<th width="130">领取时间</th>
 				<th width="100">操作</th>
-			
-				
 			</tr>
 		</thead>
 		<tbody>
-			<tr class="text-c">
-				<td><input type="checkbox" value="1" name=""></td>
-				<td>1</td>
-				<td>admin</td>
-				<td>13000000000</td>
-				<td>admin@mail.com</td>
-				<td>超级管理员</td>
-				<td>2014-6-11 11:11:42</td>
-				<td >111</td>
+			<tr th:each="ml:${MedicineList}" class="text-c">
+				<td><input type="checkbox" value="1" ></td>
+
+				<td th:text="${ml.prescription_id}"></td>
+				<td th:text="${ml.mian_doctor}"></td>
+				<td th:text="${ml.drug_id}"></td>
+				<td th:text="${ml.drug_name}"></td>
+				<td th:text="${ml.patientname}"></td>
+				<td th:text="${ml.Total_cost}"></td>
+				<td th:text="${ml.time}"></td>
 				<td class="td-manage">
-					<a title="编辑" href="javascript:;" onclick="admin_edit('药单编辑','drug-update.html','1','800','500')" class="ml-5" style="text-decoration:none">
-					<i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none">
+					<a title="编辑" th:href="@{selectMedicineListById(medicine_id=${ml.medicine_id})}" class="ml-5" style="text-decoration:none">
+					<i class="Hui-iconfont">&#xe6df;</i></a>
+					<a title="删除" th:href="@{/deleteMedicineListById(medicine_id=${ml.medicine_id})}" class="ml-5" style="text-decoration:none">
 						<i class="Hui-iconfont">&#xe6e2;</i></a></td>
 			</tr>
 		</tbody>
@@ -96,7 +98,7 @@ function admin_add(title,url,w,h){
 function admin_del(obj,id){
 	layer.confirm('确认要删除吗？',function(index){
 		//此处请求后台程序，下方是成功后的前台处理……
-		
+
 		$(obj).parents("tr").remove();
 		layer.msg('已删除!',{icon:1,time:1000});
 	});
@@ -105,7 +107,6 @@ function admin_del(obj,id){
 function admin_edit(title,url,id,w,h){
 	layer_show(title,url,w,h);
 }
-
 </script>
 </body>
 </html>
