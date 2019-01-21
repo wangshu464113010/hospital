@@ -26,11 +26,11 @@
 </head>
 <body>
 <article class="page-container">
-	<form class="form form-horizontal" id="form-article-add">
+	<form class="form form-horizontal" method="get" action="addmedicalrecord">
 		<div class="row cl">
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>姓名：</label>
 			<div class="formControls col-xs-1 col-sm-1">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				<input type="text" class="input-text" value="" placeholder="" name="">
 			</div>
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>性别：</label>
 			<div class="formControls col-xs-1 col-sm-1"> <span class="select-box">
@@ -40,17 +40,16 @@
 				</select>
 				</span>
 			</div>
-
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">出生日期：</label>
 			<div class="formControls col-xs-1 col-sm-1">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				<input type="text" class="input-text" value="" placeholder="" name="">
 			</div>
 
 			<label class="form-label col-xs-4 col-sm-2">年龄：</label>
 			<div class="formControls col-xs-1 col-sm-1">
-				<input type="text" class="input-text" value="" placeholder="年龄" id="" name="">
+				<input type="text" class="input-text" value="" placeholder="年龄" name="">
 			</div>
 			<div class="formControls col-xs-1 col-sm-1">
 				<input type="button" class="input-text" value="岁">
@@ -59,23 +58,23 @@
 		<div class="row cl">
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>体重：</label>
 			<div class="formControls col-xs-1 col-sm-1">
-				<input type="text" class="input-text" value="" placeholder="千克" id="" name="">
+				<input type="text" class="input-text" value="" placeholder="千克" name="">
 			</div>
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>身高：</label>
 			<div class="formControls col-xs-1 col-sm-1">
-				<input type="text" class="input-text" value="" placeholder="m" id="" name="">
+				<input type="text" class="input-text" value="" placeholder="m" name="">
 			</div>
 
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>发病日期：</label>
 			<div class="formControls col-xs-1 col-sm-1">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				<input type="text" class="input-text" value="" placeholder="" name="">
 			</div>
 
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>电话号码：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				<input type="text" class="input-text" value="" placeholder=""  name="">
 			</div>
 			<div class="row cl">
 
@@ -89,7 +88,7 @@
 				</div>
 				<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>家庭住址：</label>
 				<div class="formControls col-xs-4 col-sm-2">
-					<input type="text" class="input-text" value="" placeholder="" id="" name="">
+					<input type="text" class="input-text" value="" placeholder=""  name="">
 				</div>
 
 
@@ -97,18 +96,18 @@
 			<div class="row cl">
 				<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>关系联系人：</label>
 				<div class="formControls col-xs-1 col-sm-1">
-					<input type="text" class="input-text" value="" placeholder="" id="" name="">
+					<input type="text" class="input-text" value="" placeholder=""  name="">
 				</div>
 
 				<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>关系联系人电话：</label>
 				<div class="formControls col-xs-1 col-sm-1">
-					<input type="text" class="input-text" value="" placeholder="" id="" name="">
+					<input type="text" class="input-text" value="" placeholder=""  name="">
 				</div>
 			</div>
 			<div class="row cl">
 				<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>过敏史：</label>
 				<div class="formControls col-xs-1 col-sm-1">
-					<input type="text" class="input-text" value="" placeholder="" id="" name="">
+					<input type="text" class="input-text" value="" placeholder=""  name="">
 				</div>
 
 				<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>是否传染：</label>
@@ -159,27 +158,23 @@
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>血压：</label>
 					<div class="formControls col-xs-1 col-sm-1">
-						<input type="text" class="input-text" value="" placeholder="最低血压" id="" name="">
+						<input type="text" class="input-text" value="" placeholder="请输入血压范围"  name="">
 					</div>
-					<div class="formControls col-xs-1 col-sm-1">
-						<input type="text" class="input-text" value="" placeholder="最高血压" id="" name="">
-					</div>
-
 				</div>
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>呼吸：</label>
 					<div class="formControls col-xs-1 col-sm-1">
-						<input type="text" class="input-text" value="" placeholder="次/分" id="" name="">
+						<input type="text" class="input-text" value="" placeholder="次/分" name="">
 					</div>
 					<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>脉搏：</label>
 					<div class="formControls col-xs-1 col-sm-1">
-						<input type="text" class="input-text" value="" placeholder="次/分" id="" name="">
+						<input type="text" class="input-text" value="" placeholder="次/分" name="">
 					</div>
 				</div>
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2">诊断信息</label>
 					<div class="formControls col-xs-4 col-sm-2">
-						<input type="text" class="input-text" value="" placeholder="" id="" name="">
+						<input type="text" class="input-text" value="" placeholder=""  name="">
 					</div>
 					<label class="form-label col-xs-1 col-sm-1"><span class="c-red">*</span>医嘱：</label>
 					<div class="formControls col-xs-2 col-sm-1"> <span class="select-box">
@@ -194,14 +189,14 @@
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>现病史：</label>
 					<div class="formControls col-xs-8 col-sm-6">
-						<input type="text" class="input-text" value="" placeholder="" id="" name="">
+						<input type="text" class="input-text" value="" placeholder=""  name="">
 					</div>
 
 				</div>
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>主要症状：</label>
 					<div class="formControls col-xs-8 col-sm-6">
-						<input type="text" class="input-text" value="" placeholder="" id="" name="">
+						<input type="text" class="input-text" value="" placeholder=""  name="">
 					</div>
 				</div>
 				<div class="row cl">
@@ -229,15 +224,11 @@
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
 <script type="text/javascript" src="static/h-ui/js/H-ui.js"></script>
 <script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script>
-<!--/_footer /作为公共模版分离出去-->
-
-<!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript" src="lib/My97DatePicker/WdatePicker.js"></script>
 <script type="text/javascript" src="lib/webuploader/0.1.5/webuploader.min.js"></script>
 <script type="text/javascript" src="lib/ueditor/1.4.3/ueditor.config.js"></script>
 <script type="text/javascript" src="lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
 <script type="text/javascript" src="lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
 
-<!--/请在上方写此页面业务相关的脚本-->
 </body>
 </html>
