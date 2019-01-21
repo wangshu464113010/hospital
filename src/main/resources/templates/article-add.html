@@ -30,69 +30,48 @@
 		<div class="row cl">
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>药品通用名：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				<input type="text" class="input-text"  id="genericName" name="genericName">
 			</div>
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>药品别名：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				<input type="text" class="input-text"  placeholder="" id="alias" name="alias">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">货位码：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				<input type="text" class="input-text"  placeholder="" id="freightYardCode" name="freightYardCode">
 			</div>
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>药品条形码：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				<input type="text" class="input-text" value="" placeholder="" id="barCode" name="barCode">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>药品分类：</label>
 			<div class="formControls col-xs-4 col-sm-2"> <span class="select-box">
-				<select name="" class="select">
-					<option value="0">西药</option>
-					<option value="1">中药</option>
-					<option value="3">感冒药</option>
-					<option value="4">心脑血管通用药</option>
-					<option value="5">消炎药</option>
-					<option value="6">安眠药</option>
-					<option value="7">麻醉药</option>
-					<option value="8">退烧药</option>
+				<select name="category" id="drugDetails" class="select"><!-- 500 药品分类-->
+
 				</select>
 				</span> </div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>药品剂型：</label>
 			<div class="formControls col-xs-4 col-sm-2"> <span class="select-box">
-				<select name="" class="select">
-					<option value="0">片剂</option>
-					<option value="1">注射剂</option>
-					<option value="2">溶剂</option>
-					<option value="3">糖浆剂</option>
-					<option value="4">油剂</option>
-					<option value="5">粉剂</option>
-					<option value="6">软膏</option>
-					<option value="7">口服剂</option>
-					<option value="7">散剂</option>
+				<select name="dosageForm" id="yaopinjixing" class="select"><!-- 600 药品剂型  -->
+
 				</select>
 			</span> </div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>发票类型：</label>
 			<div class="formControls col-xs-4 col-sm-2"> <span class="select-box">
-				<select name="" class="select">
-					<option value="0">中药费</option>
-					<option value="1">西药费</option>
-					<option value="2">附加费</option>
-					<option value="3">检查费</option>
-					<option value="4">材料费</option>
-					<option value="5">诊疗费</option>
-					<option value="6">体检费</option>
+				<select name="fapiaoleixing" id="fapiaoleixing" class="select"><!-- 发票类型 400-->
+
 				</select>
 				</span> </div>
 				<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>用药类型：</label>
 				<div class="formControls col-xs-4 col-sm-2"> <span class="select-box">
-				<select name="" class="select">
+				<select name="invoiceType" class="select">
 					<option value="0">处方药</option>
 					<option value="1">非处方药</option>
 				</select>
@@ -101,50 +80,36 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">批准文号：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				<input type="text" class="input-text"  placeholder="" id="approvalNumber" name="approvalNumber">
 			</div>
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>生产厂家：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				<input type="text" class="input-text" value="" placeholder="" id="factory" name="factory">
 			</div>
 			<label class="form-label col-xs-1 col-sm-1"><span class="c-red">*</span>备注：</label>
 			<div class="formControls col-xs-2 col-sm-1"> <span class="select-box">
-				<select name="" class="select">
-					<option value="0">小孩减半</option>
-					<option value="1">孕妇慎用</option>
-					<option value="2">小孩慎用</option>
-					<option value="3">过敏慎用</option>
-					<option value="4">老人禁用</option>
+				<select name="remark" class="select">
+					<option value="小孩减半">小孩减半</option>
+					<option value="孕妇慎用">孕妇慎用</option>
+					<option value="小孩慎用">小孩慎用</option>
+					<option value="过敏慎用">过敏慎用</option>
+					<option value="老人禁用">老人禁用</option>
 				</select>
 				</span> </div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">药品规格：</label>			
 			<div class="formControls col-xs-2 col-sm-1"> 每（包装单位）<span class="select-box">
-				<select name="" class="select">
-					<option value="0">包</option>
-					<option value="1">盒</option>
-					<option value="2">袋</option>
-					<option value="3">板</option>
-					<option value="4">丸</option>
-					<option value="4">支</option>
-					<option value="4">枚</option>
-					<option value="4">粒</option>
+				<select name="jiliangdanwei"  class="select">
+
 				</select>
 			</span> </div>		
 				<div class="formControls col-xs-1 col-sm-1">有（换算量）
 				<input type="text" class="input-text" value="" placeholder="" id="" name="">
 			</div>
 			<div class="formControls col-xs-2 col-sm-1"> 每（小单位）<span class="select-box">
-				<select name="" class="select">
-					<option value="0">包</option>
-					<option value="1">盒</option>
-					<option value="2">袋</option>
-					<option value="3">板</option>
-					<option value="4">丸</option>
-					<option value="4">支</option>
-					<option value="4">枚</option>
-					<option value="4">粒</option>
+				<select name="jiliangdanwei"  class="select">
+
 				</select>
 			</span> </div>			
 			<div class="formControls col-xs-1 col-sm-1">小单位
@@ -154,15 +119,8 @@
 				<input type="text" class="input-text" value="" placeholder="" id="" name="">
 			</div>
 			<div class="formControls col-xs-2 col-sm-1"> 计量单位<span class="select-box">
-				<select name="" class="select">
-					<option value="0">包</option>
-					<option value="1">盒</option>
-					<option value="2">袋</option>
-					<option value="3">板</option>
-					<option value="4">丸</option>
-					<option value="4">支</option>
-					<option value="4">枚</option>
-					<option value="4">粒</option>
+				<select name="jiliangdanwei"  class="select">
+
 				</select>
 			</span> </div>
 		</div>
@@ -172,7 +130,7 @@
 				<input type="text" class="input-text" value="" placeholder="" id="" name="">
 			</div>
 			<div class="formControls col-xs-2 col-sm-1"> 频度<span class="select-box">
-				<select name="" class="select">
+				<select name="frequency" class="select">
 					<option value="0">2H一次</option>
 					<option value="1">4H</option>
 					<option value="2">6H</option>
@@ -184,7 +142,7 @@
 				</select>
 			</span> </div>			
 			<div class="formControls col-xs-2 col-sm-1"> 天数<span class="select-box">
-				<select name="" class="select">
+				<select name="day" class="select">
 					<option value="0">1</option>
 					<option value="1">2</option>
 					<option value="2">3</option>
@@ -195,21 +153,15 @@
 				</select>
 			</span> </div>
 			<div class="formControls col-xs-1 col-sm-1">总量
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				<input type="text" class="input-text" value="" placeholder="" id="total" name="total">
 			</div>
 			<div class="formControls col-xs-2 col-sm-1"> 用法<span class="select-box">
-				<select name="" class="select">
-					<option value="0">口服</option>
-					<option value="1">肌肉注射</option>
-					<option value="2">静脉注射</option>
-					<option value="3">口服</option>
-					<option value="4">冲服</option>
-					<option value="5">雾化皮试</option>
-					<option value="6">外敷</option>
+				<select name="drugUsage" id="yongfa" class="select"><!-- 200 用法 -->
+
 				</select>
 			</span> </div>
 			<div class="formControls col-xs-2 col-sm-1"> 国家基本药物<span class="select-box">
-				<select name="" class="select">
+				<select name="nationalEssentialDrugs" class="select">
 					<option value="0">是</option>
 					<option value="1">否</option>
 				</select>
@@ -219,21 +171,21 @@
 		<div class="row cl">
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>药品说明：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				<input type="text" class="input-text" value="" placeholder="" id="drugExplain" name="drugExplain">
 			</div>
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>主治功效：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				<input type="text" class="input-text" value="" placeholder="" id="effect" name="effect">
 			</div>			
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>出厂期：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				<input type="text" class="input-text" value="" placeholder="" id="productionDate" name="productionDate">
 			</div>
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>有效期：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				<input type="text" class="input-text" value="" placeholder="" id="validityPeriod" name="validityPeriod">
 			</div>			
 		</div>
 
@@ -243,6 +195,7 @@
 				<script id="editor" type="text/plain" style="width:100%;height:400px;"></script> 
 			</div>
 		</div>
+
 		<div class="row cl">
 			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">		
 				<button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
@@ -269,6 +222,59 @@
 <script type="text/javascript" src="lib/ueditor/1.4.3/ueditor.config.js"></script> 
 <script type="text/javascript" src="lib/ueditor/1.4.3/ueditor.all.min.js"> </script> 
 <script type="text/javascript" src="lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script type="application/javascript">
+	$(document).ready(function () {//
+	    $.get('dataDictionary/500',function (result) {//500 药品分类
+            // for (var i =0;i<result.length;++i){
+            //     $("#drugDetails").append('<option value="'+result[i].name+'">'+result[i].name+'</option>');
+			// }
+            forResult(result,"#drugDetails");
+        });
+
+        $.get('dataDictionary/400',function (result) {//400 发票类型
+            // for (var i =0;i<result.length;++i){
+            //     $("#fapiaoleixing").append('<option value="'+result[i].name+'">'+result[i].name+'</option>');
+            // }
+            forResult(result,"#fapiaoleixing");
+        });
+
+        $.get('dataDictionary/600',function (result) {//600 药品剂型
+            // for (var i =0;i<result.length;++i){
+            //     $("#yaopinjixing").append('<option value="'+result[i].name+'">'+result[i].name+'</option>');
+            // }
+            forResult(result,"#yaopinjixing");
+        });
+
+        $.get('dataDictionary/300',function (result) {//300 计量单位
+            // for (var i =0;i<result.length;++i){
+            //     $("select[name='jiliangdanwei']").append('<option value="'+result[i].name+'">'+result[i].name+'</option>');
+            // }
+            forResult(result,"select[name='jiliangdanwei']");
+        });
+
+        $.get('dataDictionary/200',function (result) {//200 用法
+            // for (var i =0;i<result.length;++i){
+            //     $("#yongfa").append('<option value="'+result[i].name+'">'+result[i].name+'</option>');
+            // }
+            forResult(result,"#yongfa");
+        });
+
+    });
+	function forResult(result,selecter) {
+        for (var i =0;i<result.length;++i){
+            $(selecter).append('<option value="'+result[i].name+'">'+result[i].name+'</option>');
+        }
+    }
+
+
+
+
+</script>
+
+
+
+
+
 <script type="text/javascript">
 $(function(){
 	$('.skin-minimal input').iCheck({
