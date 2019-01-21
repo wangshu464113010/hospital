@@ -15,7 +15,7 @@ import java.util.List;
  * @author: wangshu
  * @create: 2019-01-16
  **/
-@Controller
+@Controller//medical-record-add
 @RequestMapping("patient")
 public class PatientController {
 
