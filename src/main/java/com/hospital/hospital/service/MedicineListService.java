@@ -1,7 +1,6 @@
 package com.hospital.hospital.service;
 
 import com.hospital.hospital.domain.MedicineList;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -12,4 +11,5 @@ public interface MedicineListService {
     List<MedicineList> selectmedicinelistById(String medicine_id);//通过id回显修改的药品单号
     void updatemedicinelist(MedicineList medicine_list);//更新数据
     List<MedicineList> selectmedicine_listbylike( String name1);//模糊查找
+    List<MedicineList> deletemedicinelistcount(String[] medicine_id);//批量删除
 }

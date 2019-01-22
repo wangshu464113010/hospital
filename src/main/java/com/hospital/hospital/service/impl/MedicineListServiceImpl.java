@@ -45,4 +45,10 @@ public class MedicineListServiceImpl implements MedicineListService {
        return this.medicineListMapper.selectmedicine_listbylike(name1);
 
     }
+
+    @Override
+    public List<MedicineList> deletemedicinelistcount(String[] medicine_id) {
+        this.medicineListMapper.deletemedicinelistcount(medicine_id);
+        return null;
+    }
 }

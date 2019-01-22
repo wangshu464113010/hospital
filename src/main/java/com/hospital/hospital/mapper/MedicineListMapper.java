@@ -13,5 +13,5 @@ public interface MedicineListMapper {
      List<MedicineList> selectmedicinelistById(String medicine_id);
      void updatemedicinelist(MedicineList medicine_list);
      List<MedicineList> selectmedicine_listbylike(@Param("name1") String name);
-     void deletemedicinelistcount(String medicine_id);
+     void deletemedicinelistcount(@Param("array") String[] idAmedicine_id);//通过id实现批量删除
 }

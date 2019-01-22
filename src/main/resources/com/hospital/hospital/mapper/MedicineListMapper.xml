@@ -41,13 +41,11 @@
         </if>
     </select>
 
-    <delete id="deletemedicinelistcount" parameterType="list">
-        delete from medicine_list where 1>2
-            or id in
-        <foreach collection="list"  item="item" open="(" separator="," close=")"  >
-                 #{item}
+    <delete id="deletemedicinelistcount" parameterType="string">
+        DELETE FROM medicine_list WHERE medicine_id in
+        <foreach item="idArray" collection="array" open="(" separator="," close=")">
+            #{idArray}
         </foreach>
-
     </delete>
 
 </mapper>

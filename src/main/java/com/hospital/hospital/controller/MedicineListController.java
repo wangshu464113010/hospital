@@ -2,14 +2,15 @@ package com.hospital.hospital.controller;
 
 import com.hospital.hospital.domain.MedicineList;
 import com.hospital.hospital.service.MedicineListService;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -50,12 +51,19 @@ public class MedicineListController {
    @RequestMapping("/updateMedical")
    public String upmedicinelistById(MedicineList medicineList){
         this.medicineListService.updatemedicinelist(medicineList);
-       return "dispensing";
-   }
-    /*@RequestMapping("/selectAllmedicine_listbylike")
-    public String selectMedicinelistlike(String name, Model model){
-        List<MedicineList>list=this.medicineListService.selectmedicine_listbylike(name);
-        model.addAttribute("model",list);
         return "dispensing";
-    }*/
-}
+   }
+
+    @RequestMapping("/delProfile")
+    public String batchDeletes(HttpServletRequest request) {
+
+        String[ ] idChecked = request.getParameterValues("idChecked"); //获取前端所选复选框的value
+        int[] idArray = new int[idChecked.length];
+//        for (int i = 0; i < idChecked.length; i++) {         //把或取到的String数组转换为int数组
+//            idArray[i] = Integer.parseInt(idChecked[i]);
+            medicineListService.deletemedicinelistcount(idChecked);
+//        }
+       return "dispensing";
+    }
+
+    }

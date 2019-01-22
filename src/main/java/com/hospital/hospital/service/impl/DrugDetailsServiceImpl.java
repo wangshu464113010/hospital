@@ -64,4 +64,9 @@ public class DrugDetailsServiceImpl implements DrugDetailsService {
     public void update(DrugDetails drugDetails) {
         drugDetailsMapper.updateByPrimaryKeySelective(drugDetails);
     }
+
+    public int deleteByPrimaryKey(String id) {
+        this.drugDetailsMapper.deleteByPrimaryKey(id);
+        return 0;
+    }
 }
