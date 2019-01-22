@@ -1,6 +1,7 @@
 package com.hospital.hospital.service.impl;
 
 import com.hospital.hospital.domain.DrugDetails;
+import com.hospital.hospital.domain.DrugDetailsExample;
 import com.hospital.hospital.mapper.DrugDetailsMapper;
 import com.hospital.hospital.service.DrugDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +39,19 @@ public class DrugDetailsServiceImpl implements DrugDetailsService {
         drugDetails.setId(s);
         drugDetails.setSerialNum(s.replace("-","").substring(5,10));
         drugDetailsMapper.insert(drugDetails);
+    }
+
+    @Override
+    public List<DrugDetails> findByName(String name) {
+        name = '%'+name+'%';
+        DrugDetailsExample example = new DrugDetailsExample();
+        example.or().andAliasLike(name);
+        example.or().andGenericNameLike(name);
+        return drugDetailsMapper.selectByExample(example);
+    }
+
+    @Override
+    public void deleteById(String id) {
+        drugDetailsMapper.deleteByPrimaryKey(id);
     }
 }

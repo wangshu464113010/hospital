@@ -21,5 +21,9 @@ public interface EmployeeService {
 
     public Employee Login(String SerialNum, String password);
 
+    public void update(Employee employee);
+
+    public Employee findByPK(String id);
+
 
 }

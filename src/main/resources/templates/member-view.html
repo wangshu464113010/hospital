@@ -32,7 +32,9 @@
 </head>
 <body>
 <article class="page-container">
-	<form action="" method="post" class="form form-horizontal" id="form-member-add">
+	<form action="updateEmployee" method="post">
+		<input type="text" name="id" id="id" hidden />
+
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户名：</label>
 			<div class="formControls col-xs-8 col-sm-9">
@@ -41,9 +43,9 @@
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>性别：</label>
-			<input name="sex" type="radio" id="sex-1" >男
-			<input type="radio" id="sex-2" name="sex">女
-			<input type="radio" id="sex-3" name="sex">保密
+			<input name="sex" type="radio" id="sex-1" value="男" >男
+			<input type="radio" id="sex-2" name="sex" value="女">女
+			<input type="radio" id="sex-3" name="sex" value="保密">保密
 
 		</div>
 		<div class="row cl">
@@ -58,14 +60,7 @@
 				<input type="text" class="input-text" placeholder="@" name="email" id="email">
 			</div>
 		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3">附件：</label>
-			<div class="formControls col-xs-8 col-sm-9"> <span class="btn-upload form-group">
-				<input class="input-text upload-url" type="text" name="uploadfile" id="uploadfile" readonly nullmsg="请添加附件！" style="width:200px">
-				<a href="javascript:void();" class="btn btn-primary radius upload-btn"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
-				<input type="file" multiple name="file-2" class="input-file">
-				</span> </div>
-		</div>
+
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3">所在城市：</label>
 			<div class="formControls col-xs-8 col-sm-9">
@@ -80,9 +75,7 @@
 			</div>
 		</div>
 		<div class="row cl">
-			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
-				<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
-			</div>
+				<input type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
 		</div>
 
 	</form>
@@ -104,6 +97,7 @@
 			$.get("viewEmployee",function (data,status) {
 
                 if(status == "success"){
+                    $("#id").val(data.id);
 					$("#name").val(data.name);
 					$("#tel").val(data.tel);
 					$("#email").val(data.email);

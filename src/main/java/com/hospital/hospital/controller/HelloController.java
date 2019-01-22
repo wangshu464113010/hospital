@@ -84,6 +84,16 @@ public class HelloController {
         return (Employee) session.getAttribute("employee");
     }
 
+    @RequestMapping("updateEmployee")
+    public String updateEmployee(final Employee employee,final HttpSession session){
+        employeeService.update(employee);
+        Employee login = employeeService.findByPK(employee.getId());
+        session.setAttribute("employee",login);//更新session中的信息,
+        return "ok";
+    }
+
+
+
 //    @RequestMapping("/index")
 //    public String toIndex(){
 //        System.out.println("123456");

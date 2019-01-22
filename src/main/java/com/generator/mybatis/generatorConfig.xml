@@ -42,16 +42,16 @@
 			<property name="enableSubPackages" value="false" />
 		</javaClientGenerator>
 		<!-- 指定数据库表 -->
-		<table schema="" tableName="accessory_cost"></table>
-		<table schema="" tableName="data_dictionary"></table>
-		<table schema="" tableName="department"></table>
-		<table schema="" tableName="disease"></table>
-		<table schema="" tableName="drug_details"></table>
-		<table schema="" tableName="employee"></table>
-		<table schema="" tableName="medical_record"></table>
-		<table schema="" tableName="prescription"></table>
-		<table schema="" tableName="registration"></table>
-
+		<!--<table schema="" tableName="accessory_cost"></table>-->
+		<!--<table schema="" tableName="data_dictionary"></table>-->
+		<!--<table schema="" tableName="department"></table>-->
+		<!--<table schema="" tableName="disease"></table>-->
+		<!--<table schema="" tableName="drug_details"></table>-->
+		<!--<table schema="" tableName="employee"></table>-->
+		<!--<table schema="" tableName="medical_record"></table>-->
+		<!--<table schema="" tableName="prescription"></table>-->
+		<!--<table schema="" tableName="registration"></table>-->
+		<table schema="" tableName="role"></table>
 
 	</context>
 </generatorConfiguration>

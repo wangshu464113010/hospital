@@ -19,4 +19,7 @@ public interface DrugDetailsService {
 
     public void insertDrugDetails(DrugDetails drugDetails);
 
+    public List<DrugDetails> findByName(String name);
+    public void deleteById(String id);
+
 }
