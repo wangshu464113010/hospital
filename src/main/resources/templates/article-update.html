@@ -20,31 +20,32 @@
 <link rel="stylesheet" type="text/css" href="lib/icheck/icheck.css" />
 <link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
-<title>药品管理</title>
+<title>新增文章 - 资讯管理 - H-ui.admin v2.3</title>
 <meta name="keywords" content="H-ui.admin v2.3,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 <meta name="description" content="H-ui.admin v2.3，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 </head>
 <body>
 <article class="page-container">
-	<form class="form form-horizontal" action="insertDrugDetails" method="post"  id="form-article-add">
+	<form class="form form-horizontal" action="update-m" method="post"  id="form-article-add">
+		<input type="text" class="input-text" th:value="${one.id}"  id="id" name="id" hidden>
 		<div class="row cl">
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>药品通用名：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text"  id="genericName" name="genericName">
+				<input type="text" class="input-text" th:value="${one.genericName}"  id="genericName" name="genericName">
 			</div>
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>药品别名：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text"  placeholder="" id="alias" name="alias">
+				<input type="text" class="input-text"  placeholder="" th:value="${one.alias}" id="alias" name="alias">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">货位码：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text"  placeholder="" id="freightYardCode" name="freightYardCode">
+				<input type="text" class="input-text"  placeholder="" th:value="${one.freightYardCode}" id="freightYardCode" name="freightYardCode">
 			</div>
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>药品条形码：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text" value="" placeholder="" id="barCode" name="barCode">
+				<input type="text" class="input-text" value="" placeholder="" th:value="${one.barCode}" id="barCode" name="barCode">
 			</div>
 		</div>
 		<div class="row cl">
@@ -80,15 +81,15 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">批准文号：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text"  placeholder="" id="approvalNumber" name="approvalNumber">
+				<input type="text" class="input-text"  placeholder="" id="approvalNumber" th:value="${one.approvalNumber}" name="approvalNumber">
 			</div>
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>生产厂家：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text" value="" placeholder="" id="factory" name="factory">
+				<input type="text" class="input-text" value="" placeholder="" th:value="${one.factory}" id="factory" name="factory">
 			</div>
 			<label class="form-label col-xs-1 col-sm-1"><span class="c-red">*</span>备注：</label>
 			<div class="formControls formControls col-xs-4 col-sm-2"> <span class="select-box">
-				<select name="remark" class="select">
+				<select name="remark" class="select"  >
 					<option value="小孩减半">小孩减半</option>
 					<option value="孕妇慎用">孕妇慎用</option>
 					<option value="小孩慎用">小孩慎用</option>
@@ -125,13 +126,13 @@
 
 				</select>
 			</span> </div>
-			=<input  name="singleDose" id="singleDose" type="text"/>
+			=<input  name="singleDose" id="singleDose" th:value="${one.singleDose}" type="text"/>
 
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">用法用量：</label>						
 				<div class="formControls col-xs-1 col-sm-1">次
-				<input type="text" class="input-text" value="" placeholder="" id="Drug_usage" name="drugUsage">
+				<input type="text" class="input-text" th:value="${one.drugUsage}" placeholder="" id="Drug_usage" name="drugUsage">
 			</div>
 			<div class="formControls col-xs-4 col-sm-2"> 频度<span class="select-box">
 				<select name="frequency" class="select">
@@ -157,7 +158,7 @@
 				</select>
 			</span> </div>
 			<div class="formControls col-xs-1 col-sm-1">总量
-				<input type="text" class="input-text" value="" placeholder="" id="total" name="total">
+				<input type="text" class="input-text" th:value="${one.total}" placeholder="" id="total" name="total">
 			</div>
 			<div class="formControls col-xs-4 col-sm-2"> 用法<span class="select-box">
 				<select name="drugUsage" id="yongfa" class="select"><!-- 200 用法 -->
@@ -175,21 +176,21 @@
 		<div class="row cl">
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>药品说明：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text" value="" placeholder="" id="drugExplain" name="drugExplain">
+				<input type="text" class="input-text" th:value="${one.drugExplain}" placeholder="" id="drugExplain" name="drugExplain">
 			</div>
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>主治功效：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text" value="" placeholder="" id="effect" name="effect">
+				<input type="text" class="input-text"  th:value="${one.effect}" placeholder="" id="effect" name="effect">
 			</div>			
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>出厂期：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text" value="" placeholder="" id="productionDate" name="productionDate">
+				<input type="text" class="input-text" placeholder=""  th:value="${one.productionDate}" id="productionDate" name="productionDate">
 			</div>
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>有效期：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text" value="" placeholder="" id="validityPeriod" name="validityPeriod">
+				<input type="text" class="input-text"  th:value="${one.validityPeriod}"  placeholder="" id="validityPeriod" name="validityPeriod">
 			</div>			
 		</div>
 
@@ -230,37 +231,23 @@
 <script type="application/javascript">
 	$(document).ready(function () {//
 	    $.get('dataDictionary/500',function (result) {//500 药品分类
-            // for (var i =0;i<result.length;++i){
-            //     $("#drugDetails").append('<option value="'+result[i].name+'">'+result[i].name+'</option>');
-			// }
+
             forResult(result,"#drugDetails");
         });
 
         $.get('dataDictionary/400',function (result) {//400 发票类型
-            // for (var i =0;i<result.length;++i){
-            //     $("#fapiaoleixing").append('<option value="'+result[i].name+'">'+result[i].name+'</option>');
-            // }
             forResult(result,"#fapiaoleixing");
         });
 
         $.get('dataDictionary/600',function (result) {//600 药品剂型
-            // for (var i =0;i<result.length;++i){
-            //     $("#yaopinjixing").append('<option value="'+result[i].name+'">'+result[i].name+'</option>');
-            // }
             forResult(result,"#yaopinjixing");
         });
 
         $.get('dataDictionary/300',function (result) {//300 计量单位
-            // for (var i =0;i<result.length;++i){
-            //     $("select[name='jiliangdanwei']").append('<option value="'+result[i].name+'">'+result[i].name+'</option>');
-            // }
             forResult(result,"select[name='jiliangdanwei']");
         });
 
         $.get('dataDictionary/200',function (result) {//200 用法
-            // for (var i =0;i<result.length;++i){
-            //     $("#yongfa").append('<option value="'+result[i].name+'">'+result[i].name+'</option>');
-            // }
             forResult(result,"#yongfa");
         });
 
@@ -290,7 +277,10 @@
             str = '每'+$("#sd1").val()+'有'+$("#sd2").val()+$("#sd3").val()+
                 '，每'+$("#sd4").val()+'有'+$("#sd5").val()+$("#sd6").val();
         }
-        $("#singleDose").val(str);
+        if(!str==""){
+            $("#singleDose").val(str);
+		}
+
 
 	}
 

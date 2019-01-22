@@ -52,4 +52,14 @@ public class EmployeeServiceImpl implements EmployeeService {
             throw new UserException();
         }
     }
+
+    @Override
+    public void update(Employee employee) {
+        employeeMapper.updateByPrimaryKeySelective(employee);
+    }
+
+    @Override
+    public Employee findByPK(String id) {
+        return employeeMapper.selectByPrimaryKey(id);
+    }
 }

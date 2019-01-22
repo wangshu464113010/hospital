@@ -26,7 +26,61 @@ public class MedicalRecord implements Serializable {
   private String departmentName;//'科室名',
   private String departmentId;//'科室主键',
   private String diseaseName;//'疾病类别名',
-  private String patientName;//'病人主键',
+  private String patientId;//'病人主键',
+
+  @Override
+  public String toString() {
+    return "MedicalRecord{" +
+            "id='" + id + '\'' +
+            ", allergy='" + allergy + '\'' +
+            ", diagnosticType='" + diagnosticType + '\'' +
+            ", temperature=" + temperature +
+            ", symptom='" + symptom + '\'' +
+            ", bloodPressure='" + bloodPressure + '\'' +
+            ", diagnosticInfo='" + diagnosticInfo + '\'' +
+            ", doctorAdvice='" + doctorAdvice + '\'' +
+            ", breathing='" + breathing + '\'' +
+            ", pulse='" + pulse + '\'' +
+            ", money=" + money +
+            ", consultationDate=" + consultationDate +
+            ", contagion=" + contagion +
+            ", medicalHistory='" + medicalHistory + '\'' +
+            ", employeeId='" + employeeId + '\'' +
+            ", employeeName='" + employeeName + '\'' +
+            ", diseaseId=" + diseaseId +
+            ", departmentName='" + departmentName + '\'' +
+            ", departmentId='" + departmentId + '\'' +
+            ", diseaseName='" + diseaseName + '\'' +
+            ", patientId='" + patientId + '\'' +
+            '}';
+  }
+
+  public MedicalRecord() {
+  }
+
+  public MedicalRecord(String id, String allergy, String diagnosticType, Long temperature, String symptom, String bloodPressure, String diagnosticInfo, String doctorAdvice, String breathing, String pulse, Double money, Date consultationDate, Long contagion, String medicalHistory, String employeeId, String employeeName, Long diseaseId, String departmentName, String departmentId, String diseaseName, String patientId) {
+    this.id = id;
+    this.allergy = allergy;
+    this.diagnosticType = diagnosticType;
+    this.temperature = temperature;
+    this.symptom = symptom;
+    this.bloodPressure = bloodPressure;
+    this.diagnosticInfo = diagnosticInfo;
+    this.doctorAdvice = doctorAdvice;
+    this.breathing = breathing;
+    this.pulse = pulse;
+    this.money = money;
+    this.consultationDate = consultationDate;
+    this.contagion = contagion;
+    this.medicalHistory = medicalHistory;
+    this.employeeId = employeeId;
+    this.employeeName = employeeName;
+    this.diseaseId = diseaseId;
+    this.departmentName = departmentName;
+    this.departmentId = departmentId;
+    this.diseaseName = diseaseName;
+    this.patientId = patientId;
+  }
 
   public String getId() {
     return id;
@@ -188,65 +242,11 @@ public class MedicalRecord implements Serializable {
     this.diseaseName = diseaseName;
   }
 
-  public String getPatientName() {
-    return patientName;
+  public String getPatientId() {
+    return patientId;
   }
 
-  public void setPatientName(String patientName) {
-    this.patientName = patientName;
-  }
-
-  @Override
-  public String toString() {
-    return "MedicalRecord{" +
-            "id='" + id + '\'' +
-            ", allergy='" + allergy + '\'' +
-            ", diagnosticType='" + diagnosticType + '\'' +
-            ", temperature=" + temperature +
-            ", symptom='" + symptom + '\'' +
-            ", bloodPressure='" + bloodPressure + '\'' +
-            ", diagnosticInfo='" + diagnosticInfo + '\'' +
-            ", doctorAdvice='" + doctorAdvice + '\'' +
-            ", breathing='" + breathing + '\'' +
-            ", pulse='" + pulse + '\'' +
-            ", money=" + money +
-            ", consultationDate=" + consultationDate +
-            ", contagion=" + contagion +
-            ", medicalHistory='" + medicalHistory + '\'' +
-            ", employeeId='" + employeeId + '\'' +
-            ", employeeName='" + employeeName + '\'' +
-            ", diseaseId=" + diseaseId +
-            ", departmentName='" + departmentName + '\'' +
-            ", departmentId='" + departmentId + '\'' +
-            ", diseaseName='" + diseaseName + '\'' +
-            ", patientName='" + patientName + '\'' +
-            '}';
-  }
-
-  public MedicalRecord() {
-  }
-
-  public MedicalRecord(String id, String allergy, String diagnosticType, Long temperature, String symptom, String bloodPressure, String diagnosticInfo, String doctorAdvice, String breathing, String pulse, Double money, Date consultationDate, Long contagion, String medicalHistory, String employeeId, String employeeName, Long diseaseId, String departmentName, String departmentId, String diseaseName, String patientName) {
-    this.id = id;
-    this.allergy = allergy;
-    this.diagnosticType = diagnosticType;
-    this.temperature = temperature;
-    this.symptom = symptom;
-    this.bloodPressure = bloodPressure;
-    this.diagnosticInfo = diagnosticInfo;
-    this.doctorAdvice = doctorAdvice;
-    this.breathing = breathing;
-    this.pulse = pulse;
-    this.money = money;
-    this.consultationDate = consultationDate;
-    this.contagion = contagion;
-    this.medicalHistory = medicalHistory;
-    this.employeeId = employeeId;
-    this.employeeName = employeeName;
-    this.diseaseId = diseaseId;
-    this.departmentName = departmentName;
-    this.departmentId = departmentId;
-    this.diseaseName = diseaseName;
-    this.patientName = patientName;
+  public void setPatientId(String patientId) {
+    this.patientId = patientId;
   }
 }

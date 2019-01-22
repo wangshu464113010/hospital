@@ -17,6 +17,14 @@ public interface DrugDetailsService {
 
     public List<DrugDetails> findAll();
 
+    public DrugDetails findOneByPk(String id);
+
     public void insertDrugDetails(DrugDetails drugDetails);
+    int deleteByPrimaryKey(String id);
+
+    public List<DrugDetails> findByName(String name);
+    public void deleteById(String id);
+
+    public void update(DrugDetails drugDetails);
 
 }
