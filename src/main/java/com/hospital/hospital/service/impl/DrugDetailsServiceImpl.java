@@ -33,6 +33,11 @@ public class DrugDetailsServiceImpl implements DrugDetailsService {
     }
 
     @Override
+    public DrugDetails findOneByPk(String id) {
+        return drugDetailsMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
     @Transactional
     public void insertDrugDetails(DrugDetails drugDetails) {
         String s = UUID.randomUUID().toString();
@@ -53,5 +58,10 @@ public class DrugDetailsServiceImpl implements DrugDetailsService {
     @Override
     public void deleteById(String id) {
         drugDetailsMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public void update(DrugDetails drugDetails) {
+        drugDetailsMapper.updateByPrimaryKeySelective(drugDetails);
     }
 }

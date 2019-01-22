@@ -4,10 +4,14 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * @program: hospital
- * @description: 读写锁
+ * @description: 读写锁===>更新锁
  * 相比lock,提交了效率,读锁与读锁不互斥，写锁与写锁互斥，写锁与读锁互斥
  * @author: wangshu
  * @create: 2019-01-21
+ *
+ *
+ *
+ *
  **/
 
 public class ReadWrite {
