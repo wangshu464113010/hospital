@@ -18,7 +18,7 @@ public class GeneratorSqlmap {
 		List<String> warnings = new ArrayList<String>();
 		boolean overwrite = true;
 		//指定 逆向工程配置文件
-		File configFile = new File("E:\\a\\hospital\\src\\main\\java\\com\\generator\\mybatis\\generatorConfig.xml");
+		File configFile = new File("C:\\Users\\Administrator\\IdeaProjects\\hospital\\src\\main\\java\\com\\generator\\mybatis\\generatorConfig.xml");
 		ConfigurationParser cp = new ConfigurationParser(warnings);
 		Configuration config = cp.parseConfiguration(configFile);
 		DefaultShellCallback callback = new DefaultShellCallback(overwrite);

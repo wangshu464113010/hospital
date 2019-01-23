@@ -33,6 +33,7 @@ public class HelloController {
 //            return "redirect:login";
 //        }
         Object employee = request.getSession().getAttribute("employee");
+
         if(employee==null){ //检查session中是否含有employee对象
 //            model.addAttribute("error","您还没有登录请登录");
             return "login";

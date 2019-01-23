@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @program: hospital
  * @description:病人信息服务类
- * @author: wangshu
+ * @author: wuyun
  * @create: 2019-01-16
  **/
 @Service

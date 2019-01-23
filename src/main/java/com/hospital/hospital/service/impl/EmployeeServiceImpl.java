@@ -29,7 +29,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public List<Employee> findAllByPage() {
         //开始分页---参数1=第几页,参数2=每一页的大小
-        PageHelper.startPage(2,3);
+        PageHelper.startPage(0,3);
 //        int i = employeeMapper.countByExample(null);
         List<Employee> list = employeeMapper.selectByExample(null);
         System.out.println(list.size());
@@ -37,6 +37,25 @@ public class EmployeeServiceImpl implements EmployeeService {
         PageInfo<Employee> pageInfo = new PageInfo<>(list);
         pageInfo.setSize(i);
         return list;
+    }
+
+    @Override
+    public List<Employee> findDoctor() {
+        EmployeeExample employeeExample = new EmployeeExample();
+        EmployeeExample.Criteria criteria = employeeExample.createCriteria();
+        criteria.andBeforeJobEqualTo("医生");
+        List<Employee> employeeList = employeeMapper.selectByExample(employeeExample);
+        return employeeList;
+    }
+
+    @Override
+    public List<Employee> findEmployee() {
+        EmployeeExample employeeExample = new EmployeeExample();
+        employeeExample.or().andBeforeJobEqualTo("医生");
+        employeeExample.or().andBeforeJobEqualTo("护士");
+
+        List<Employee> employeeList = employeeMapper.selectByExample(employeeExample);
+        return employeeList;
     }
 
     @Override

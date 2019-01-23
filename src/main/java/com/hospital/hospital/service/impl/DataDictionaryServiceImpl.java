@@ -37,4 +37,5 @@ public class DataDictionaryServiceImpl implements DataDictionaryService {
         criteria.andParentIdEqualTo(pid);
         return dataDictionaryMapper.selectByExample(example);
     }
+
 }
