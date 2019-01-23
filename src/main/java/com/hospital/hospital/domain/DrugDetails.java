@@ -33,7 +33,38 @@ public class DrugDetails implements Serializable {
   private Double price;                 //     '价格',
   private String other;                 //     '其他'
 
-
+  @Override
+  public String toString() {
+    return "DrugDetails{" +
+            "id='" + id + '\'' +
+            ", serialNum='" + serialNum + '\'' +
+            ", genericName='" + genericName + '\'' +
+            ", alias='" + alias + '\'' +
+            ", freightYardCode='" + freightYardCode + '\'' +
+            ", barCode='" + barCode + '\'' +
+            ", category='" + category + '\'' +
+            ", dosageForm='" + dosageForm + '\'' +
+            ", invoiceType='" + invoiceType + '\'' +
+            ", medicationType='" + medicationType + '\'' +
+            ", approvalNumber='" + approvalNumber + '\'' +
+            ", factory='" + factory + '\'' +
+            ", remark='" + remark + '\'' +
+            ", nationalEssentialDrugs=" + nationalEssentialDrugs +
+            ", drugUsage='" + drugUsage + '\'' +
+            ", singleDose='" + singleDose + '\'' +
+            ", day=" + day +
+            ", frequency='" + frequency + '\'' +
+            ", total='" + total + '\'' +
+            ", drugExplain='" + drugExplain + '\'' +
+            ", effect='" + effect + '\'' +
+            ", sideEffects='" + sideEffects + '\'' +
+            ", applicableDisease='" + applicableDisease + '\'' +
+            ", productionDate=" + productionDate +
+            ", validityPeriod=" + validityPeriod +
+            ", price=" + price +
+            ", other='" + other + '\'' +
+            '}';
+  }
 
   public String getId() {
     return id;

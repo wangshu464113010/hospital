@@ -32,54 +32,63 @@
 </head>
 <body>
 <article class="page-container">
-	<form class="form form-horizontal" id="form-admin-add">
+	<form class="form form-horizontal" method="get" action="updateMedical">
+
 	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>处方单号：</label>
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>开药单编号：</label>
 		<div class="formControls col-xs-8 col-sm-9">
-			<input type="text" class="input-text" value="" placeholder="" id="adminName" name="adminName">
+			<input type="text" class="input-text" th:value="${m2.medicine_id}" name="medicine_id">
 		</div>
 	</div>
 	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>主治医生：</label>
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>处方单号：</label>
 		<div class="formControls col-xs-8 col-sm-9">
-			<input type="password" class="input-text" autocomplete="off" value="" placeholder=" " id="" name="password">
+			<input type="text" class="input-text"  th:value="${m2.prescription_id}" name="prescription_id">
 		</div>
 	</div>
 	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>药品编号：</label>
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>主治医生：</label>
 		<div class="formControls col-xs-8 col-sm-9">
-			<input type="password" class="input-text" autocomplete="off"  id="password2" name="password2">
+			<input type="text" class="input-text" th:value="${m2.mian_doctor}" name="mian_doctor">
 		</div>
 	</div>
 	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>药品名：</label>
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>药品编号：</label>
 		<div class="formControls col-xs-8 col-sm-9">
-			<input type="password" class="input-text" autocomplete="off"   id="password2" name="password2">
+			<input type="text" class="input-text" th:value="${m2.drug_id}" name="drug_id">
 		</div>
 	</div>	
 	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>付费方式：</label>
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>药品名：</label>
 		<div class="formControls col-xs-8 col-sm-9">
-			<input type="text" class="input-text" value="" placeholder="" id="phone" name="phone">
+			<input type="text" class="input-text" th:value="${m2.drug_name}" name="drug_name">
 		</div>
 	</div>
 	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>总费用：</label>
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>患者姓名：</label>
 		<div class="formControls col-xs-8 col-sm-9">
-			<input type="text" class="input-text" placeholder="" name="" id="">
+			<input type="text" class="input-text"  th:value="${m2.patientname}" name="patientname" >
 		</div>
 	</div>
 	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>领取时间：</label>
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>总费用：</label>
 		<div class="formControls col-xs-8 col-sm-9">
-			<input type="password" class="input-text" autocomplete="off"   id="password2" name="password2">
+			<input type="text" class="input-text" th:value="${m2.Total_cost}" name="Total_cost">
 		</div>
-	</div>	
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>领取时间：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="text" class="input-text" th:value="${m2.time}" name="time">
+		</div>
+	</div>
 	<div class="row cl">
 		<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
 			<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;更新&nbsp;&nbsp;">
 		</div>
 	</div>
+
+
 	</form>
 </article>
 

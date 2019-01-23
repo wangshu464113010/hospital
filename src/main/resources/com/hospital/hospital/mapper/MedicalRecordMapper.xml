@@ -158,6 +158,8 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
+
+  <!--添加病历-->
   <insert id="insert" parameterType="com.hospital.hospital.domain.MedicalRecord" >
     <!--
       WARNING - @mbggenerated
@@ -538,4 +540,12 @@
       patient_id = #{patientId,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
+  <delete id="deletemdrcount" parameterType="string">
+    DELETE FROM medical_record WHERE id in
+    <foreach item="idArray" collection="array" open="(" separator="," close=")">
+      #{idArray}
+    </foreach>
+  </delete>
+
 </mapper>

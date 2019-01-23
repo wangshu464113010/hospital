@@ -2,6 +2,7 @@ package com.hospital.hospital.domain;
 
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class MedicalRecord implements Serializable {
 
@@ -27,6 +28,59 @@ public class MedicalRecord implements Serializable {
   private String diseaseName;//'疾病类别名',
   private String patientId;//'病人主键',
 
+  @Override
+  public String toString() {
+    return "MedicalRecord{" +
+            "id='" + id + '\'' +
+            ", allergy='" + allergy + '\'' +
+            ", diagnosticType='" + diagnosticType + '\'' +
+            ", temperature=" + temperature +
+            ", symptom='" + symptom + '\'' +
+            ", bloodPressure='" + bloodPressure + '\'' +
+            ", diagnosticInfo='" + diagnosticInfo + '\'' +
+            ", doctorAdvice='" + doctorAdvice + '\'' +
+            ", breathing='" + breathing + '\'' +
+            ", pulse='" + pulse + '\'' +
+            ", money=" + money +
+            ", consultationDate=" + consultationDate +
+            ", contagion=" + contagion +
+            ", medicalHistory='" + medicalHistory + '\'' +
+            ", employeeId='" + employeeId + '\'' +
+            ", employeeName='" + employeeName + '\'' +
+            ", diseaseId=" + diseaseId +
+            ", departmentName='" + departmentName + '\'' +
+            ", departmentId='" + departmentId + '\'' +
+            ", diseaseName='" + diseaseName + '\'' +
+            ", patientId='" + patientId + '\'' +
+            '}';
+  }
+
+  public MedicalRecord() {
+  }
+
+  public MedicalRecord(String id, String allergy, String diagnosticType, Long temperature, String symptom, String bloodPressure, String diagnosticInfo, String doctorAdvice, String breathing, String pulse, Double money, Date consultationDate, Long contagion, String medicalHistory, String employeeId, String employeeName, Long diseaseId, String departmentName, String departmentId, String diseaseName, String patientId) {
+    this.id = id;
+    this.allergy = allergy;
+    this.diagnosticType = diagnosticType;
+    this.temperature = temperature;
+    this.symptom = symptom;
+    this.bloodPressure = bloodPressure;
+    this.diagnosticInfo = diagnosticInfo;
+    this.doctorAdvice = doctorAdvice;
+    this.breathing = breathing;
+    this.pulse = pulse;
+    this.money = money;
+    this.consultationDate = consultationDate;
+    this.contagion = contagion;
+    this.medicalHistory = medicalHistory;
+    this.employeeId = employeeId;
+    this.employeeName = employeeName;
+    this.diseaseId = diseaseId;
+    this.departmentName = departmentName;
+    this.departmentId = departmentId;
+    this.diseaseName = diseaseName;
+    this.patientId = patientId;
+  }
 
   public String getId() {
     return id;
@@ -36,7 +90,6 @@ public class MedicalRecord implements Serializable {
     this.id = id;
   }
 
-
   public String getAllergy() {
     return allergy;
   }
@@ -44,7 +97,6 @@ public class MedicalRecord implements Serializable {
   public void setAllergy(String allergy) {
     this.allergy = allergy;
   }
-
 
   public String getDiagnosticType() {
     return diagnosticType;
@@ -54,7 +106,6 @@ public class MedicalRecord implements Serializable {
     this.diagnosticType = diagnosticType;
   }
 
-
   public Long getTemperature() {
     return temperature;
   }
@@ -62,7 +113,6 @@ public class MedicalRecord implements Serializable {
   public void setTemperature(Long temperature) {
     this.temperature = temperature;
   }
-
 
   public String getSymptom() {
     return symptom;
@@ -72,7 +122,6 @@ public class MedicalRecord implements Serializable {
     this.symptom = symptom;
   }
 
-
   public String getBloodPressure() {
     return bloodPressure;
   }
@@ -80,7 +129,6 @@ public class MedicalRecord implements Serializable {
   public void setBloodPressure(String bloodPressure) {
     this.bloodPressure = bloodPressure;
   }
-
 
   public String getDiagnosticInfo() {
     return diagnosticInfo;
@@ -90,7 +138,6 @@ public class MedicalRecord implements Serializable {
     this.diagnosticInfo = diagnosticInfo;
   }
 
-
   public String getDoctorAdvice() {
     return doctorAdvice;
   }
@@ -98,7 +145,6 @@ public class MedicalRecord implements Serializable {
   public void setDoctorAdvice(String doctorAdvice) {
     this.doctorAdvice = doctorAdvice;
   }
-
 
   public String getBreathing() {
     return breathing;
@@ -108,7 +154,6 @@ public class MedicalRecord implements Serializable {
     this.breathing = breathing;
   }
 
-
   public String getPulse() {
     return pulse;
   }
@@ -116,7 +161,6 @@ public class MedicalRecord implements Serializable {
   public void setPulse(String pulse) {
     this.pulse = pulse;
   }
-
 
   public Double getMoney() {
     return money;
@@ -126,15 +170,13 @@ public class MedicalRecord implements Serializable {
     this.money = money;
   }
 
-
-  public java.util.Date getConsultationDate() {
+  public Date getConsultationDate() {
     return consultationDate;
   }
 
-  public void setConsultationDate(java.util.Date consultationDate) {
+  public void setConsultationDate(Date consultationDate) {
     this.consultationDate = consultationDate;
   }
-
 
   public Long getContagion() {
     return contagion;
@@ -144,7 +186,6 @@ public class MedicalRecord implements Serializable {
     this.contagion = contagion;
   }
 
-
   public String getMedicalHistory() {
     return medicalHistory;
   }
@@ -152,7 +193,6 @@ public class MedicalRecord implements Serializable {
   public void setMedicalHistory(String medicalHistory) {
     this.medicalHistory = medicalHistory;
   }
-
 
   public String getEmployeeId() {
     return employeeId;
@@ -162,7 +202,6 @@ public class MedicalRecord implements Serializable {
     this.employeeId = employeeId;
   }
 
-
   public String getEmployeeName() {
     return employeeName;
   }
@@ -170,7 +209,6 @@ public class MedicalRecord implements Serializable {
   public void setEmployeeName(String employeeName) {
     this.employeeName = employeeName;
   }
-
 
   public Long getDiseaseId() {
     return diseaseId;
@@ -180,7 +218,6 @@ public class MedicalRecord implements Serializable {
     this.diseaseId = diseaseId;
   }
 
-
   public String getDepartmentName() {
     return departmentName;
   }
@@ -188,7 +225,6 @@ public class MedicalRecord implements Serializable {
   public void setDepartmentName(String departmentName) {
     this.departmentName = departmentName;
   }
-
 
   public String getDepartmentId() {
     return departmentId;
@@ -198,7 +234,6 @@ public class MedicalRecord implements Serializable {
     this.departmentId = departmentId;
   }
 
-
   public String getDiseaseName() {
     return diseaseName;
   }
@@ -207,7 +242,6 @@ public class MedicalRecord implements Serializable {
     this.diseaseName = diseaseName;
   }
 
-
   public String getPatientId() {
     return patientId;
   }
@@ -215,5 +249,4 @@ public class MedicalRecord implements Serializable {
   public void setPatientId(String patientId) {
     this.patientId = patientId;
   }
-
 }

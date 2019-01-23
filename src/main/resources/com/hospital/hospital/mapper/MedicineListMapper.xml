@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hospital.hospital.mapper.MedicineListMapper" >
+    <resultMap id="MedicineListMapper" type="com.hospital.hospital.domain.MedicineList" >
+
+        <id column="medicine_id" property="medicine_id" jdbcType="VARCHAR" />
+        <result column="prescription_id" property="prescription_id" jdbcType="VARCHAR" />
+        <result column="mian_doctor" property="mian_doctor" jdbcType="VARCHAR" />
+        <result column="drug_id" property="drug_id" jdbcType="VARCHAR" />
+        <result column="drug_name" property="drug_name" jdbcType="VARCHAR" />
+        <result column="Charging_method" property="Charging_method" jdbcType="VARCHAR" />
+        <result column="Total_cost" property="Total_cost" jdbcType="DOUBLE" />
+        <result column="time" property="time" jdbcType="VARCHAR" />
+    </resultMap>
+<insert id="insertmedicine_list" parameterType="MedicineList">
+        insert into medicine_list(medicine_id,prescription_id,mian_doctor,drug_id,drug_name,patientname,Total_cost,time)
+         values (#{medicine_id},#{prescription_id},#{mian_doctor},#{drug_id},#{drug_name},
+         #{patientname},#{Total_cost},#{time})
+</insert>
+    <select id="selectfindallmedicinelist" resultType="MedicineList">
+        select medicine_id,prescription_id,mian_doctor,drug_id,drug_name,patientname,Total_cost,time
+        from medicine_list
+    </select>
+<delete id="deletemedicinelist" parameterType="String">
+          delete from medicine_list where medicine_id=#{medicine_id}
+</delete>
+    <select id="selectmedicinelistById" resultType="MedicineList">
+        select medicine_id,prescription_id,mian_doctor,drug_id,drug_name,patientname,Total_cost,time
+        from medicine_list where medicine_id=#{medicine_id}
+    </select>
+    <update id="updatemedicinelist" parameterType="MedicineList">
+        update medicine_list set mian_doctor=#{mian_doctor}, drug_name=#{drug_name},patientname=#{patientname},Total_cost=#{Total_cost},time=#{time}
+         where medicine_id=#{medicine_id}
+    </update>
+
+  <select id="selectmedicine_listbylike" parameterType="String" resultType="MedicineList">
+        select medicine_id,prescription_id,mian_doctor,drug_id,drug_name,patientname,Total_cost ,time
+        from medicine_list where 1=1
+        <if test="name1!= null and name1!= ''">
+            AND mian_doctor LIKE concat(concat('%',#{name1}),'%') or patientname LIKE concat(concat('%',#{name1}),'%')
+        </if>
+    </select>
+
+    <delete id="deletemedicinelistcount" parameterType="string">
+        DELETE FROM medicine_list WHERE medicine_id in
+        <foreach item="idArray" collection="array" open="(" separator="," close=")">
+            #{idArray}
+        </foreach>
+    </delete>
+
+</mapper>

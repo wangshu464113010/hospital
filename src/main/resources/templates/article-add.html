@@ -20,13 +20,13 @@
 <link rel="stylesheet" type="text/css" href="lib/icheck/icheck.css" />
 <link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
-<title>新增文章 - 资讯管理 - H-ui.admin v2.3</title>
+<title>药品管理</title>
 <meta name="keywords" content="H-ui.admin v2.3,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 <meta name="description" content="H-ui.admin v2.3，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 </head>
 <body>
 <article class="page-container">
-	<form class="form form-horizontal" id="form-article-add">
+	<form class="form form-horizontal" action="insertDrugDetails" method="post"  id="form-article-add">
 		<div class="row cl">
 			<label class="form-label col-xs-2 col-sm-2"><span class="c-red">*</span>药品通用名：</label>
 			<div class="formControls col-xs-4 col-sm-2">
@@ -65,13 +65,13 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>发票类型：</label>
 			<div class="formControls col-xs-4 col-sm-2"> <span class="select-box">
-				<select name="fapiaoleixing" id="fapiaoleixing" class="select"><!-- 发票类型 400-->
+				<select name="invoiceType" id="fapiaoleixing" class="select"><!-- 发票类型 400-->
 
 				</select>
 				</span> </div>
 				<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>用药类型：</label>
 				<div class="formControls col-xs-4 col-sm-2"> <span class="select-box">
-				<select name="invoiceType" class="select">
+				<select name="medicationType" class="select">
 					<option value="0">处方药</option>
 					<option value="1">非处方药</option>
 				</select>
@@ -87,7 +87,7 @@
 				<input type="text" class="input-text" value="" placeholder="" id="factory" name="factory">
 			</div>
 			<label class="form-label col-xs-1 col-sm-1"><span class="c-red">*</span>备注：</label>
-			<div class="formControls col-xs-2 col-sm-1"> <span class="select-box">
+			<div class="formControls formControls col-xs-4 col-sm-2"> <span class="select-box">
 				<select name="remark" class="select">
 					<option value="小孩减半">小孩减半</option>
 					<option value="孕妇慎用">孕妇慎用</option>
@@ -99,37 +99,41 @@
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">药品规格：</label>			
-			<div class="formControls col-xs-2 col-sm-1"> 每（包装单位）<span class="select-box">
-				<select name="jiliangdanwei"  class="select">
+			<div class="formControls col-xs-2 col-sm-1"> <span class="select-box">每
+				<select name="jiliangdanwei" id="sd1"  class="select">
 
 				</select>
 			</span> </div>		
-				<div class="formControls col-xs-1 col-sm-1">有（换算量）
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				<div class="formControls col-xs-1 col-sm-1">
+					<span>
+					有<input type="text" class="input-text" id="sd2"  value="" placeholder=""  name="">
+					</span>
 			</div>
-			<div class="formControls col-xs-2 col-sm-1"> 每（小单位）<span class="select-box">
-				<select name="jiliangdanwei"  class="select">
+			<div class="formControls col-xs-2 col-sm-1"> <span class="select-box">
+				<select name="jiliangdanwei" id="sd3"   class="select">
 
 				</select>
 			</span> </div>			
 			<div class="formControls col-xs-1 col-sm-1">小单位
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				每<input type="text" class="input-text" id="sd4"  value="" placeholder=""  name="">
 			</div>			
 			<div class="formControls col-xs-1 col-sm-1">剂量
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				有<input type="text" class="input-text" id="sd5"  value="" placeholder=""  name="">
 			</div>
-			<div class="formControls col-xs-2 col-sm-1"> 计量单位<span class="select-box">
-				<select name="jiliangdanwei"  class="select">
+			<div class="formControls col-xs-2 col-sm-1">计量单位<span class="select-box">
+				<select name="jiliangdanwei"  id="sd6"  class="select">
 
 				</select>
 			</span> </div>
+			=<input  name="singleDose" id="singleDose" type="text"/>
+
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">用法用量：</label>						
 				<div class="formControls col-xs-1 col-sm-1">次
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				<input type="text" class="input-text" value="" placeholder="" id="Drug_usage" name="drugUsage">
 			</div>
-			<div class="formControls col-xs-2 col-sm-1"> 频度<span class="select-box">
+			<div class="formControls col-xs-4 col-sm-2"> 频度<span class="select-box">
 				<select name="frequency" class="select">
 					<option value="0">2H一次</option>
 					<option value="1">4H</option>
@@ -141,7 +145,7 @@
 					<option value="4">两天四次</option>
 				</select>
 			</span> </div>			
-			<div class="formControls col-xs-2 col-sm-1"> 天数<span class="select-box">
+			<div class="formControls  col-xs-4 col-sm-2"> 天数<span class="select-box">
 				<select name="day" class="select">
 					<option value="0">1</option>
 					<option value="1">2</option>
@@ -155,7 +159,7 @@
 			<div class="formControls col-xs-1 col-sm-1">总量
 				<input type="text" class="input-text" value="" placeholder="" id="total" name="total">
 			</div>
-			<div class="formControls col-xs-2 col-sm-1"> 用法<span class="select-box">
+			<div class="formControls col-xs-4 col-sm-2"> 用法<span class="select-box">
 				<select name="drugUsage" id="yongfa" class="select"><!-- 200 用法 -->
 
 				</select>
@@ -198,7 +202,7 @@
 
 		<div class="row cl">
 			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">		
-				<button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
+				<input type="submit" value="commit"/>
 				<button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
 			</div>
 		</div>
@@ -222,6 +226,7 @@
 <script type="text/javascript" src="lib/ueditor/1.4.3/ueditor.config.js"></script> 
 <script type="text/javascript" src="lib/ueditor/1.4.3/ueditor.all.min.js"> </script> 
 <script type="text/javascript" src="lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+
 <script type="application/javascript">
 	$(document).ready(function () {//
 	    $.get('dataDictionary/500',function (result) {//500 药品分类
@@ -265,12 +270,31 @@
             $(selecter).append('<option value="'+result[i].name+'">'+result[i].name+'</option>');
         }
     }
+</script>
+<script type="application/javascript">
+	$(document).ready(function () {
+
+        setInterval("startRequest()",1000);
 
 
 
+    });
+    function startRequest(){
+        $("#sd4").val($("#sd3").val());
+
+        var str = "";
+        // $("#singleDose").val(str);
+		//每包有多少盒，没盒有多少片，每片有多少克
+        if( !$.isEmptyObject($("#sd2").val())&& !$.isEmptyObject($("#sd4").val())&&
+            !$.isEmptyObject($("#sd5").val())){
+            str = '每'+$("#sd1").val()+'有'+$("#sd2").val()+$("#sd3").val()+
+                '，每'+$("#sd4").val()+'有'+$("#sd5").val()+$("#sd6").val();
+        }
+        $("#singleDose").val(str);
+
+	}
 
 </script>
-
 
 
 
