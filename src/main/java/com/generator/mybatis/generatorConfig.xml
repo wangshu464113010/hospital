@@ -42,7 +42,6 @@
 			<property name="enableSubPackages" value="false" />
 		</javaClientGenerator>
 		<!-- 指定数据库表 -->
-<<<<<<< Updated upstream
 		<!--<table schema="" tableName="accessory_cost"></table>-->
 		<!--<table schema="" tableName="data_dictionary"></table>-->
 		<!--<table schema="" tableName="department"></table>-->
@@ -53,7 +52,6 @@
 		<!--<table schema="" tableName="prescription"></table>-->
 		<!--<table schema="" tableName="registration"></table>-->
 		<table schema="" tableName="role"></table>
-=======
 		<!--<table schema="" tableName="accessory_cost"></table>
 		<table schema="" tableName="data_dictionary"></table>
 		<table schema="" tableName="department"></table>
@@ -64,7 +62,6 @@
 		<table schema="" tableName="prescription"></table>-->
 		<table schema="" tableName="registration"></table>
 
->>>>>>> Stashed changes
 
 	</context>
 </generatorConfiguration>

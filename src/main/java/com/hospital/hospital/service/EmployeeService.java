@@ -22,13 +22,10 @@ public interface EmployeeService {
     public List<Employee> findDoctor();
     public Employee Login(String SerialNum, String password);
 
-<<<<<<< Updated upstream
     public void update(Employee employee);
 
     public Employee findByPK(String id);
 
-=======
     public List<Employee> findEmployee();
->>>>>>> Stashed changes
 
 }
